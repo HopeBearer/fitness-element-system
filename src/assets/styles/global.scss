@@ -1,0 +1,188 @@
+// 全局美化滚动条（可选）
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+
+  &-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &-track {
+    background: transparent;
+  }
+}
+body {
+  margin: 0;
+}
+
+// 统一动画过渡
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// 统一按钮样式
+.el-button--primary {
+  background-color: #ff6a00;
+  border-color: #ff6a00;
+
+  &:hover {
+    background-color: #ff8247;
+    border-color: #ff8247;
+  }
+}
+
+// orange-theme.scss 公共样式文件
+$primary-color: #ff6a00;
+
+.custom-nav {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .el-menu-item {
+    transition: all 0.3s;
+    font-size: 16px;
+
+    &:hover {
+      background-color: rgba($primary-color, 0.1) !important;
+    }
+
+    &.is-active {
+      border-bottom: 3px solid $primary-color;
+    }
+  }
+}
+
+.orange-btn {
+  background: $primary-color;
+  border-color: $primary-color;
+  padding: 12px 24px;
+
+  &:hover,
+  &:focus {
+    background: lighten($primary-color, 10%);
+    border-color: lighten($primary-color, 10%);
+  }
+}
+
+.orange-text {
+  color: $primary-color;
+
+  &:hover {
+    color: lighten($primary-color, 10%);
+  }
+}
+
+.equipment-container {
+  height: 100vh;
+  background: #f0f2f5;
+  overflow: hidden;
+
+  .custom-nav {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .el-menu-item {
+      font-size: 16px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: rgba(255, 106, 0, 0.1) !important;
+      }
+
+      &.is-active {
+        border-bottom: 3px solid #ff6a00;
+      }
+    }
+  }
+
+  .main-content {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .operation-bar {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    .search-input {
+      flex: 1;
+      max-width: 400px;
+
+      ::v-deep .el-input-group__append {
+        background-color: #ff6a00;
+        border-color: #ff6a00;
+
+        .el-button {
+          color: white;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+
+  .orange-btn {
+    background: #ff6a00;
+    border-color: #ff6a00;
+    padding: 12px 24px;
+
+    &:hover,
+    &:focus {
+      background: #ff8533;
+      border-color: #ff8533;
+    }
+  }
+
+  .data-table {
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+    ::v-deep th {
+      background-color: #f8f9fa;
+      font-weight: 600;
+    }
+
+    .orange-text {
+      color: #ff6a00;
+
+      &:hover {
+        color: #ff8533;
+      }
+    }
+
+    .danger-text {
+      color: #f56c6c;
+    }
+  }
+
+  .pagination {
+    margin-top: 24px;
+    text-align: right;
+
+    ::v-deep .btn-prev,
+    ::v-deep .btn-next,
+    ::v-deep .number {
+      &:hover {
+        color: #ff6a00;
+      }
+    }
+
+    ::v-deep .active {
+      background-color: #ff6a00 !important;
+      border-color: #ff6a00 !important;
+    }
+  }
+}
